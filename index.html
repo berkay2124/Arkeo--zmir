@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive digital platform for archaeological sites in Izmir Province, Turkey. Serving both academic researchers and cultural tourists.">
+    <meta name="keywords" content="archaeology, Izmir, Turkey, cultural heritage, Ephesus, Pergamon, ancient sites">
+    <meta name="author" content="Berkay Gülbeyaz">
+    <title>Archaeological Heritage of Izmir | Digital Platform</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-landmark"></i>
+                    <span class="logo-text">Archaeological <span class="highlight">Izmir</span></span>
+                </a>
+
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="sites.html" class="nav-link">Explore Sites</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="#" class="nav-link" id="searchToggle"><i class="fas fa-search"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <button class="search-close" id="searchClose">&times;</button>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search archaeological sites...">
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="hero-title" data-aos="fade-up">
+                    Discover the Archaeological<br>
+                    <span class="highlight">Heritage of Izmir</span>
+                </h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Exploring 40 ancient sites across millennia of civilization - from Bronze Age settlements to Byzantine grandeur
+                </p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
+                    <a href="sites.html" class="btn btn-primary">
+                        <i class="fas fa-map-marked-alt"></i> Explore Sites
+                    </a>
+                    <a href="#featured" class="btn btn-secondary">
+                        <i class="fas fa-scroll"></i> Learn More
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="hero-stats" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-item">
+                        <span class="stat-number">40</span>
+                        <span class="stat-label">Archaeological Sites</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3000+</span>
+                        <span class="stat-label">Years of History</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">UNESCO Sites</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">18</span>
+                        <span class="stat-label">Historical Periods</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="intro-section" id="intro">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">A Living Museum of Ancient Civilizations</h2>
+                <p class="section-subtitle">
+                    Izmir province represents one of the most archaeologically significant regions in the Mediterranean basin
+                </p>
+            </div>
+
+            <div class="intro-grid">
+                <div class="intro-card" data-aos="fade-up">
+                    <div class="intro-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Academic Excellence</h3>
+                    <p>Comprehensive technical data, excavation histories, and verified bibliographies for serious research.</p>
+                </div>
+
+                <div class="intro-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="intro-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Cultural Tourism</h3>
+                    <p>Practical visitor information, highlights, and access details for planning your archaeological journey.</p>
+                </div>
+
+                <div class="intro-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="intro-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Hidden Gems</h3>
+                    <p>Discover lesser-known sites like Metropolis, Teos, and Notion alongside famous destinations.</p>
+                </div>
+
+                <div class="intro-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="intro-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Verified Information</h3>
+                    <p>All content sourced from official Ministry publications, academic journals, and excavation reports.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Sites Section -->
+    <section class="featured-section" id="featured">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Archaeological Sites</h2>
+                <p class="section-subtitle">Explore our most significant and well-preserved ancient locations</p>
+            </div>
+
+            <!-- Period Filter -->
+            <div class="period-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-period="all">All Periods</button>
+                <button class="filter-btn" data-period="Bronze Age">Bronze Age</button>
+                <button class="filter-btn" data-period="Archaic">Archaic</button>
+                <button class="filter-btn" data-period="Classical">Classical</button>
+                <button class="filter-btn" data-period="Hellenistic">Hellenistic</button>
+                <button class="filter-btn" data-period="Roman">Roman</button>
+                <button class="filter-btn" data-period="Byzantine">Byzantine</button>
+            </div>
+
+            <!-- Sites Grid -->
+            <div class="sites-grid" id="featuredSites">
+                <!-- Sites will be loaded dynamically via JavaScript -->
+            </div>
+
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="sites.html" class="btn btn-primary">View All 40 Sites</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section class="map-section" id="map">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Explore by Location</h2>
+                <p class="section-subtitle">Interactive map of archaeological sites across Izmir Province</p>
+            </div>
+
+            <div class="map-container" data-aos="fade-up">
+                <div id="interactive-map" class="interactive-map">
+                    <!-- Map will be initialized via JavaScript -->
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p>Interactive map loading...</p>
+                        <small>Click on markers to explore sites</small>
+                    </div>
+                </div>
+
+                <div class="map-legend">
+                    <h4>Site Types</h4>
+                    <div class="legend-item">
+                        <span class="legend-marker unesco"></span>
+                        <span>UNESCO World Heritage</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-marker major"></span>
+                        <span>Major Sites</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-marker lesser"></span>
+                        <span>Lesser-Known Sites</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-marker restricted"></span>
+                        <span>Restricted Access</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section" id="timeline">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Journey Through Time</h2>
+                <p class="section-subtitle">3000+ years of continuous human civilization</p>
+            </div>
+
+            <div class="timeline" data-aos="fade-up">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-period">3000-1200 BCE</span>
+                        <h3>Bronze Age</h3>
+                        <p>Early settlements emerge along the Aegean coast, establishing trade networks.</p>
+                        <span class="timeline-sites">Sites: Liman Tepe, Bakla Tepe</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-period">1200-480 BCE</span>
+                        <h3>Archaic Period</h3>
+                        <p>Foundation of major Ionian cities and emergence of Greek culture.</p>
+                        <span class="timeline-sites">Sites: Smyrna, Klazomenai, Teos</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-period">480-323 BCE</span>
+                        <h3>Classical Period</h3>
+                        <p>Height of Greek city-states, philosophy, and architectural innovation.</p>
+                        <span class="timeline-sites">Sites: Erythrai, Notion, Lebedos</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-period">323-30 BCE</span>
+                        <h3>Hellenistic Period</h3>
+                        <p>Expansion under Alexander and his successors, cultural synthesis.</p>
+                        <span class="timeline-sites">Sites: Pergamon, Metropolis, Magnesia</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-period">30 BCE-330 CE</span>
+                        <h3>Roman Period</h3>
+                        <p>Integration into Roman Empire, monumental architecture and prosperity.</p>
+                        <span class="timeline-sites">Sites: Ephesus, Smyrna Agora, Allianoi</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-period">330-1453 CE</span>
+                        <h3>Byzantine Period</h3>
+                        <p>Christian transformation, basilicas, and continued urban life.</p>
+                        <span class="timeline-sites">Sites: Basilica of St. John, Sirince</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2>Begin Your Archaeological Journey</h2>
+                <p>Explore 40 meticulously documented sites with academic rigor and visitor-friendly accessibility</p>
+                <div class="cta-buttons">
+                    <a href="sites.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-compass"></i> Start Exploring
+                    </a>
+                    <a href="about.html" class="btn btn-secondary btn-large">
+                        <i class="fas fa-info-circle"></i> About This Project
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Archaeological Izmir</h4>
+                    <p>A comprehensive digital platform for archaeological sites in Izmir Province, Turkey.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sites.html">All Sites</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#map">Interactive Map</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Visitor Information</a></li>
+                        <li><a href="#">Academic References</a></li>
+                        <li><a href="#">Bibliography</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Project Info</h4>
+                    <p><strong>Student:</strong> Berkay Gülbeyaz (191005056)</p>
+                    <p><strong>Department:</strong> Management Information Systems</p>
+                    <p><strong>Institution:</strong> İzmir Bakırçay University</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Archaeological Heritage of Izmir. Developed as part of graduation thesis project.</p>
+                <p>Data sources: Republic of Turkey Ministry of Culture and Tourism, Academic Publications</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/sites-data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/map.js"></script>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
