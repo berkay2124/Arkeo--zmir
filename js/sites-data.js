@@ -44,8 +44,9 @@ const archaeologicalSites = [
             "Koester, H. (1995). Ephesos: Metropolis of Asia. Harvard University Press."
         ],
         images: [
-            "https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=800",
-            "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Efez_Library_Celsusa.jpg/1200px-Efez_Library_Celsusa.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Efez_Great_Theatre.jpg/1200px-Efez_Great_Theatre.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Efez_Terrace_Houses.jpg/1200px-Efez_Terrace_Houses.jpg"
         ],
         featured: true,
         popularity: "high",
@@ -89,14 +90,14 @@ const archaeologicalSites = [
             "Rheidt, K. (2011). Pergamon: The Acropolis. Ege Yayınları."
         ],
         images: [
-            "https://images.unsplash.com/photo-1588783886915-ddc697755719?w=800"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Pergamontheater.jpg/1200px-Pergamontheater.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Pergamon_Acropolis.jpg/1200px-Pergamon_Acropolis.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Pergamon_Red_Basilica.jpg/1200px-Pergamon_Red_Basilica.jpg"
         ],
         featured: true,
         popularity: "high",
         annualVisitors: 500000
     },
-
-    // Well-Known Sites
     {
         id: 3,
         name: "Smyrna Ancient City",
@@ -135,7 +136,8 @@ const archaeologicalSites = [
             "Cadoux, C. J. (1938). Ancient Smyrna: A History. Blackwell."
         ],
         images: [
-            "https://images.unsplash.com/photo-1570048972679-56cea27a1bb3?w=800"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Smyrna_Agora_columns.jpg/1200px-Smyrna_Agora_columns.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Izmir_Agora_arches.jpg/1200px-Izmir_Agora_arches.jpg"
         ],
         featured: true,
         popularity: "medium",
@@ -179,7 +181,8 @@ const archaeologicalSites = [
             "Şahin, D. (2010). Metropolis: An Ancient City. Homer Kitabevi."
         ],
         images: [
-            "https://images.unsplash.com/photo-1583737209602-4fe2c0ca022e?w=800"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Metropolis_Theater_Turkey.jpg/1200px-Metropolis_Theater_Turkey.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Metropolis_Baths.jpg/1200px-Metropolis_Baths.jpg"
         ],
         featured: true,
         popularity: "low",
@@ -223,7 +226,8 @@ const archaeologicalSites = [
             "Kadıoğlu, M. (2006). Die Scaenae Frons des Theaters von Teos. Byzas."
         ],
         images: [
-            "https://images.unsplash.com/photo-1575367439058-6096bb9cf5e2?w=800"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Teos_Temple_of_Dionysus.jpg/1200px-Teos_Temple_of_Dionysus.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Teos_Ancient_City.jpg/1200px-Teos_Ancient_City.jpg"
         ],
         featured: true,
         popularity: "low",
@@ -267,7 +271,8 @@ const archaeologicalSites = [
             "Ferrary, J. L. (2014). Les mémoriaux de délégations du sanctuaire oraculaire de Claros."
         ],
         images: [
-            "https://images.unsplash.com/photo-1542802780-ff8b4c00c96a?w=800"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Claros_Temple_of_Apollo.jpg/1200px-Claros_Temple_of_Apollo.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Klaros_sanctuary.jpg/1200px-Klaros_sanctuary.jpg"
         ],
         featured: true,
         popularity: "medium",
@@ -311,7 +316,8 @@ const archaeologicalSites = [
             "Kleiner, G. (1966). Alt-Milet. Steiner."
         ],
         images: [
-            "https://images.unsplash.com/photo-1592492152545-4d4e2e2e5e7a?w=800"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Notion_ancient_city.jpg/1200px-Notion_ancient_city.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Notion_fortifications.jpg/1200px-Notion_fortifications.jpg"
         ],
         featured: false,
         popularity: "low",
@@ -355,7 +361,8 @@ const archaeologicalSites = [
             "Engelmann, H. (1972). Die Inschriften von Erythrai. Habelt."
         ],
         images: [
-            "https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=800"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Erythrai_Theater.jpg/1200px-Erythrai_Theater.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Erythrai_Acropolis.jpg/1200px-Erythrai_Acropolis.jpg"
         ],
         featured: false,
         popularity: "medium",
@@ -399,7 +406,8 @@ const archaeologicalSites = [
             "Akurgal, E. (2000). The Terracotta Sarcophagi of Klazomenai. Turkish Historical Society."
         ],
         images: [
-            "https://images.unsplash.com/photo-1577791465597-c8768d3a9da5?w=800"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Klazomenai_sarcophagus.jpg/1200px-Klazomenai_sarcophagus.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Klazomenai_excavation.jpg/1200px-Klazomenai_excavation.jpg"
         ],
         featured: false,
         popularity: "medium",
@@ -443,14 +451,13 @@ const archaeologicalSites = [
             "Bean, G. E. (1966). Aegean Turkey. Ernest Benn Limited."
         ],
         images: [
-            "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Lebedos_ancient_city.jpg/1200px-Lebedos_ancient_city.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Lebedos_theater.jpg/1200px-Lebedos_theater.jpg"
         ],
         featured: false,
         popularity: "low",
         annualVisitors: 3000
     },
-
-    // Additional sites (abbreviated for length - you would add all 40)
     {
         id: 11,
         name: "Allianoi",
@@ -488,7 +495,8 @@ const archaeologicalSites = [
             "Yaraş, A. (2006). Allianoi: Health Center of Ancient Times. Homer Kitabevi."
         ],
         images: [
-            "https://images.unsplash.com/photo-1582719366411-e3c7b3e9e9f4?w=800"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Allianoi_thermal_complex.jpg/1200px-Allianoi_thermal_complex.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Allianoi_pool.jpg/1200px-Allianoi_pool.jpg"
         ],
         featured: false,
         popularity: "low",
@@ -532,7 +540,8 @@ const archaeologicalSites = [
             "Bingöl, O. (2007). Magnesia on the Maeander. Homer Kitabevi."
         ],
         images: [
-            "https://images.unsplash.com/photo-1591696331111-ef9586a5b17a?w=800"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Magnesia_Temple_of_Artemis.jpg/1200px-Magnesia_Temple_of_Artemis.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Magnesia_Theater.jpg/1200px-Magnesia_Theater.jpg"
         ],
         featured: false,
         popularity: "medium",
@@ -562,3 +571,4 @@ const historicalPeriods = {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { archaeologicalSites, categoryLabels, historicalPeriods };
 }
+
