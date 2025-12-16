@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Detailed information about archaeological site">
-    <title>Site Details | Archaeological Izmir</title>
+    <meta name="description" content="Arkeolojik alan detay sayfası">
+    <title>Alan Detayı | Arkeo İzmir</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏛️%3C/text%3E%3C/svg%3E">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,538 +21,82 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        .site-hero {
-            position: relative;
-            height: 60vh;
-            min-height: 500px;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: flex-end;
-        }
-
-        .site-hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
-        }
-
-        .site-hero-content {
-            position: relative;
-            z-index: 2;
-            color: white;
-            padding: var(--spacing-10) 0 var(--spacing-6);
-        }
-
-        .site-hero-title {
-            font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
-            color: white;
-            margin-bottom: var(--spacing-3);
-        }
-
-        .site-meta {
-            display: flex;
-            gap: var(--spacing-6);
-            flex-wrap: wrap;
-            font-size: var(--text-lg);
-            margin-top: var(--spacing-4);
-        }
-
-        .site-meta-item {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-2);
-        }
-
-        .site-meta-item i {
-            color: var(--color-primary);
-        }
-
-        .breadcrumb {
-            padding: var(--spacing-4) 0;
-            background: var(--color-gray-50);
-            font-size: var(--text-sm);
-        }
-
-        .breadcrumb a {
-            color: var(--color-primary);
-        }
-
-        .site-content {
-            padding: var(--spacing-10) 0;
-        }
-
-        .content-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: var(--spacing-8);
-        }
-
-        .main-content {
-            background: white;
-        }
-
-        .sidebar {
-            position: sticky;
-            top: 100px;
-            align-self: start;
-        }
-
-        .content-section {
-            margin-bottom: var(--spacing-8);
-        }
-
-        .content-section h2 {
-            font-size: var(--text-3xl);
-            margin-bottom: var(--spacing-4);
-            color: var(--color-gray-900);
-            padding-bottom: var(--spacing-3);
-            border-bottom: 3px solid var(--color-primary);
-        }
-
-        .highlights-grid {
-            display: grid;
-            gap: var(--spacing-3);
-        }
-
-        .highlight-item {
-            display: flex;
-            align-items: start;
-            gap: var(--spacing-3);
-            padding: var(--spacing-4);
-            background: var(--color-gray-50);
-            border-radius: var(--radius-lg);
-            border-left: 4px solid var(--color-primary);
-        }
-
-        .highlight-item i {
-            color: var(--color-primary);
-            font-size: var(--text-xl);
-            margin-top: 2px;
-        }
-
-        .info-card {
-            background: white;
-            border-radius: var(--radius-xl);
-            padding: var(--spacing-6);
-            box-shadow: var(--shadow-lg);
-            margin-bottom: var(--spacing-6);
-        }
-
-        .info-card h3 {
-            font-size: var(--text-xl);
-            margin-bottom: var(--spacing-4);
-            color: var(--color-gray-900);
-        }
-
-        .info-item {
-            display: flex;
-            justify-content: space-between;
-            padding: var(--spacing-3) 0;
-            border-bottom: 1px solid var(--color-gray-200);
-        }
-
-        .info-item:last-child {
-            border-bottom: none;
-        }
-
-        .info-label {
-            font-weight: 600;
-            color: var(--color-gray-600);
-        }
-
-        .info-value {
-            color: var(--color-gray-900);
-            text-align: right;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: var(--spacing-4);
-        }
-
-        .gallery-item {
-            position: relative;
-            padding-bottom: 75%;
-            overflow: hidden;
-            border-radius: var(--radius-lg);
-            cursor: pointer;
-        }
-
-        .gallery-item img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform var(--transition-slow);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .bibliography-list {
-            list-style: none;
-            counter-reset: bib-counter;
-        }
-
-        .bibliography-list li {
-            counter-increment: bib-counter;
-            padding: var(--spacing-4);
-            margin-bottom: var(--spacing-3);
-            background: var(--color-gray-50);
-            border-radius: var(--radius-lg);
-            position: relative;
-            padding-left: var(--spacing-10);
-        }
-
-        .bibliography-list li::before {
-            content: "[" counter(bib-counter) "]";
-            position: absolute;
-            left: var(--spacing-4);
-            font-weight: 700;
-            color: var(--color-primary);
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: var(--spacing-3);
-            margin-top: var(--spacing-6);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--color-primary);
-            color: var(--color-primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--color-primary);
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .sidebar {
-                position: static;
-            }
-
-            .site-meta {
-                flex-direction: column;
-                gap: var(--spacing-3);
-            }
-        }
-    </style>
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <a href="index.html" class="logo">
-                    <i class="fas fa-landmark"></i>
-                    <span class="logo-text">Archaeological <span class="highlight">Izmir</span></span>
-                </a>
+    <!-- Skip to content link -->
+    <a href="#main-content" class="skip-link">Ana içeriğe atla</a>
 
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="sites.html" class="nav-link">Explore Sites</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="#" class="nav-link" id="searchToggle"><i class="fas fa-search"></i></a></li>
-                </ul>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="nav container" role="navigation" aria-label="Ana navigasyon">
+            <div class="nav-brand">
+                <span class="nav-icon">🏛️</span>
+                <span class="nav-title">Arkeo İzmir</span>
             </div>
-        </div>
-    </nav>
-
-    <!-- Search Overlay -->
-    <div class="search-overlay" id="searchOverlay">
-        <div class="search-container">
-            <button class="search-close" id="searchClose">&times;</button>
-            <input type="text" id="searchInput" class="search-input" placeholder="Search archaeological sites...">
-            <div class="search-results" id="searchResults"></div>
-        </div>
-    </div>
-
-    <!-- Site Hero -->
-    <section class="site-hero" id="siteHero">
-        <div class="site-hero-overlay"></div>
-        <div class="site-hero-content">
-            <div class="container">
-                <h1 class="site-hero-title" id="siteTitle">Loading...</h1>
-                <p id="siteTurkish" style="font-size: var(--text-xl); opacity: 0.9;"></p>
-                <div class="site-meta" id="siteMeta"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <div class="container">
-            <a href="index.html">Home</a> / <a href="sites.html">Sites</a> / <span id="breadcrumbSite">Site</span>
-        </div>
-    </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+                <li><a href="sites.html" class="nav-link">Tüm Alanlar</a></li>
+                <li><a href="about.html" class="nav-link">Hakkında</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- Main Content -->
-    <section class="site-content">
-        <div class="container">
-            <div class="content-grid">
-                <!-- Main Content -->
-                <div class="main-content">
-                    <!-- Description -->
-                    <div class="content-section">
-                        <h2>Overview</h2>
-                        <p id="siteDescription" style="font-size: var(--text-lg); line-height: 1.8; color: var(--color-gray-700);"></p>
-                        <p id="siteSignificance" style="font-size: var(--text-base); line-height: 1.8; color: var(--color-gray-600); margin-top: var(--spacing-4);"></p>
-                    </div>
+    <main id="main-content" role="main">
+        <!-- Site will be dynamically loaded here -->
+        <div id="site-detail-container"></div>
 
-                    <!-- Highlights -->
-                    <div class="content-section">
-                        <h2>Key Highlights</h2>
-                        <div class="highlights-grid" id="highlightsGrid"></div>
-                    </div>
-
-                    <!-- Excavation History -->
-                    <div class="content-section">
-                        <h2>Excavation & Research</h2>
-                        <div id="excavationInfo"></div>
-                    </div>
-
-                    <!-- Gallery -->
-                    <div class="content-section">
-                        <h2>Image Gallery</h2>
-                        <div class="gallery" id="imageGallery"></div>
-                    </div>
-
-                    <!-- Bibliography -->
-                    <div class="content-section">
-                        <h2>Academic References</h2>
-                        <ul class="bibliography-list" id="bibliographyList"></ul>
-                    </div>
-                </div>
-
-                <!-- Sidebar -->
-                <div class="sidebar">
-                    <!-- Visitor Information -->
-                    <div class="info-card">
-                        <h3><i class="fas fa-info-circle"></i> Visitor Information</h3>
-                        <div id="visitorInfo"></div>
-                    </div>
-
-                    <!-- Site Details -->
-                    <div class="info-card">
-                        <h3><i class="fas fa-list"></i> Site Details</h3>
-                        <div id="siteDetails"></div>
-                    </div>
-
-                    <!-- Actions -->
-                    <div class="action-buttons">
-                        <button class="btn btn-primary" onclick="window.print()">
-                            <i class="fas fa-print"></i> Print
-                        </button>
-                        <button class="btn btn-outline" onclick="shareSite()">
-                            <i class="fas fa-share-alt"></i> Share
-                        </button>
-                    </div>
-                </div>
-            </div>
+        <!-- Loading State -->
+        <div id="loading-state" class="loading-container">
+            <div class="loading-spinner"></div>
+            <p>Yükleniyor...</p>
         </div>
-    </section>
+
+        <!-- Error State -->
+        <div id="error-state" class="error-container" style="display: none;">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h2>Alan Bulunamadı</h2>
+            <p>İstediğiniz arkeolojik alan bulunamadı.</p>
+            <a href="sites.html" class="btn btn-primary">Tüm Alanlara Dön</a>
+        </div>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Archaeological Izmir</h4>
-                    <p>A comprehensive digital platform for archaeological sites in Izmir Province, Turkey.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Arkeo İzmir</h3>
+                    <p>İzmir'in zengin arkeolojik mirasını keşfetmek için dijital platformunuz</p>
                 </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="sites.html">All Sites</a></li>
-                        <li><a href="about.html">About</a></li>
+                <div class="footer-section">
+                    <h4>Hızlı Bağlantılar</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="sites.html">Tüm Alanlar</a></li>
+                        <li><a href="about.html">Hakkında</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kaynaklar</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://kvmgm.ktb.gov.tr/" target="_blank" rel="noopener">Kültür ve Turizm Bakanlığı</a></li>
+                        <li><a href="https://whc.unesco.org/" target="_blank" rel="noopener">UNESCO Dünya Mirası</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Archaeological Heritage of Izmir. Graduation Thesis Project.</p>
+                <p>&copy; 2024 Arkeo İzmir. Tüm hakları saklıdır.</p>
+                <p>Geliştirici: <strong>Berkay Gülbeyaz</strong></p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/sites-data.js"></script>
-    <script src="js/main.js"></script>
-
-    <script>
-        let currentSite = null;
-
-        document.addEventListener('DOMContentLoaded', function() {
-            loadSiteDetails();
-        });
-
-        function loadSiteDetails() {
-            const siteId = parseInt(sessionStorage.getItem('selectedSiteId'));
-
-            if (!siteId) {
-                window.location.href = 'sites.html';
-                return;
-            }
-
-            currentSite = archaeologicalSites.find(site => site.id === siteId);
-
-            if (!currentSite) {
-                window.location.href = 'sites.html';
-                return;
-            }
-
-            renderSiteDetails(currentSite);
-        }
-
-        function renderSiteDetails(site) {
-            // Hero section
-            document.getElementById('siteHero').style.backgroundImage = `url('${site.images[0]}')`;
-            document.getElementById('siteTitle').textContent = site.name;
-            document.getElementById('siteTurkish').textContent = site.turkish;
-            document.getElementById('breadcrumbSite').textContent = site.name;
-
-            // Meta information
-            const metaHtml = `
-                <div class="site-meta-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>${site.district}, Izmir</span>
-                </div>
-                <div class="site-meta-item">
-                    <i class="fas fa-clock"></i>
-                    <span>${site.mainPeriod} Period</span>
-                </div>
-                <div class="site-meta-item">
-                    <i class="fas fa-tag"></i>
-                    <span>${categoryLabels[site.category]}</span>
-                </div>
-            `;
-            document.getElementById('siteMeta').innerHTML = metaHtml;
-
-            // Description
-            document.getElementById('siteDescription').textContent = site.description;
-            document.getElementById('siteSignificance').textContent = site.significance;
-
-            // Highlights
-            const highlightsHtml = site.highlights.map(highlight => `
-                <div class="highlight-item">
-                    <i class="fas fa-check-circle"></i>
-                    <span>${highlight}</span>
-                </div>
-            `).join('');
-            document.getElementById('highlightsGrid').innerHTML = highlightsHtml;
-
-            // Excavation info
-            const excavationHtml = `
-                <div class="info-item">
-                    <div class="info-label">Start Year</div>
-                    <div class="info-value">${site.excavation.startYear}</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">Current Status</div>
-                    <div class="info-value">${site.excavation.currentStatus}</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">Lead Institution</div>
-                    <div class="info-value">${site.excavation.leadInstitution}</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">Key Findings</div>
-                    <div class="info-value">${site.excavation.keyFindings}</div>
-                </div>
-            `;
-            document.getElementById('excavationInfo').innerHTML = excavationHtml;
-
-            // Gallery
-            const galleryHtml = site.images.map(img => `
-                <div class="gallery-item">
-                    <img src="${img}" alt="${site.name}" loading="lazy">
-                </div>
-            `).join('');
-            document.getElementById('imageGallery').innerHTML = galleryHtml;
-
-            // Bibliography
-            const biblioHtml = site.bibliography.map(ref => `<li>${ref}</li>`).join('');
-            document.getElementById('bibliographyList').innerHTML = biblioHtml;
-
-            // Visitor Information
-            const visitorHtml = `
-                <div class="info-item">
-                    <div class="info-label">Access</div>
-                    <div class="info-value">${site.visitorInfo.accessibility}</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">Best Time</div>
-                    <div class="info-value">${site.visitorInfo.bestTime}</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">Duration</div>
-                    <div class="info-value">${site.visitorInfo.duration}</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">Admission</div>
-                    <div class="info-value">${site.visitorInfo.admission}</div>
-                </div>
-            `;
-            document.getElementById('visitorInfo').innerHTML = visitorHtml;
-
-            // Site Details
-            const detailsHtml = `
-                <div class="info-item">
-                    <div class="info-label">Type</div>
-                    <div class="info-value">${site.type}</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">Established</div>
-                    <div class="info-value">${site.established}</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">Periods</div>
-                    <div class="info-value">${site.periods.join(', ')}</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">Annual Visitors</div>
-                    <div class="info-value">${site.annualVisitors ? site.annualVisitors.toLocaleString() : 'Not tracked'}</div>
-                </div>
-            `;
-            document.getElementById('siteDetails').innerHTML = detailsHtml;
-
-            // Update page title
-            document.title = `${site.name} | Archaeological Izmir`;
-        }
-
-        function shareSite() {
-            if (navigator.share && currentSite) {
-                navigator.share({
-                    title: currentSite.name,
-                    text: currentSite.description,
-                    url: window.location.href
-                }).catch(err => console.log('Share failed:', err));
-            } else {
-                alert('Share URL: ' + window.location.href);
-            }
-        }
-    </script>
+    <script src="js/site-detail.js"></script>
 </body>
 </html>
