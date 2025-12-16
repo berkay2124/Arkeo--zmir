@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About the Archaeological Heritage of Izmir digital platform - graduation thesis project">
-    <title>About | Archaeological Izmir</title>
+    <meta name="description" content="Arkeo İzmir projesi hakkında bilgi. İzmir'in arkeolojik mirasını dijital ortamda keşfedin.">
+    <title>Hakkında | Arkeo İzmir</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏛️%3C/text%3E%3C/svg%3E">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,324 +20,213 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <a href="index.html" class="logo">
-                    <i class="fas fa-landmark"></i>
-                    <span class="logo-text">Archaeological <span class="highlight">Izmir</span></span>
-                </a>
+    <!-- Skip to content link -->
+    <a href="#main-content" class="skip-link">Ana içeriğe atla</a>
 
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="sites.html" class="nav-link">Explore Sites</a></li>
-                    <li><a href="about.html" class="nav-link active">About</a></li>
-                    <li><a href="#" class="nav-link" id="searchToggle"><i class="fas fa-search"></i></a></li>
-                </ul>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="nav container" role="navigation" aria-label="Ana navigasyon">
+            <div class="nav-brand">
+                <span class="nav-icon">🏛️</span>
+                <span class="nav-title">Arkeo İzmir</span>
             </div>
-        </div>
-    </nav>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+                <li><a href="sites.html" class="nav-link">Tüm Alanlar</a></li>
+                <li><a href="about.html" class="nav-link active" aria-current="page">Hakkında</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Search Overlay -->
-    <div class="search-overlay" id="searchOverlay">
-        <div class="search-container">
-            <button class="search-close" id="searchClose">&times;</button>
-            <input type="text" id="searchInput" class="search-input" placeholder="Search archaeological sites...">
-            <div class="search-results" id="searchResults"></div>
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Hakkında</h1>
+            <p>İzmir'in arkeolojik mirasını dijital ortamda keşfedin</p>
         </div>
     </div>
 
-    <!-- Page Header -->
-    <section class="page-header" style="padding: 120px 0 60px; background: linear-gradient(135deg, var(--color-secondary-dark), var(--color-secondary)); color: white; text-align: center;">
-        <div class="container">
-            <h1 style="color: white;">About This Project</h1>
-            <p style="font-size: var(--text-lg); max-width: 700px; margin: 0 auto; opacity: 0.95;">
-                Web-Based Digitization of Archaeological Sites in Izmir Province
-            </p>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- About Content -->
+        <section class="about-content section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text" data-aos="fade-right">
+                        <h2>Proje Hakkında</h2>
+                        <p>Arkeo İzmir, İzmir İli'ndeki zengin arkeolojik mirası dijital ortamda sunmak için tasarlanmış kapsamlı bir platformdur. Bu proje, hem akademik araştırmacılar hem de kültür meraklıları için değerli bir kaynak oluşturmayı amaçlamaktadır.</p>
+                        <p>İzmir, binlerce yıllık medeniyete ev sahipliği yapmış, Efes ve Bergama gibi UNESCO Dünya Mirası Listesi'ndeki alanlardan, gizli kalmış küçük antik kentlere kadar pek çok arkeolojik hazineye sahiptir.</p>
 
-    <!-- Project Overview -->
-    <section style="padding: var(--spacing-10) 0; background: white;">
-        <div class="container">
-            <div style="max-width: 900px; margin: 0 auto;">
-                <h2 style="font-size: var(--text-4xl); margin-bottom: var(--spacing-6); text-align: center;">Project Overview</h2>
-
-                <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--color-gray-700); margin-bottom: var(--spacing-5);">
-                    This digital platform addresses a significant gap in cultural heritage management by creating an accessible, structured resource that serves both academic researchers and cultural tourism audiences. Through systematic data collection from official sources and rigorous verification processes, the project has established a comprehensive database of 40 archaeological sites across Izmir Province.
-                </p>
-
-                <div class="intro-grid" style="margin-top: var(--spacing-8);">
-                    <div class="intro-card">
-                        <div class="intro-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3>Academic Research</h3>
-                        <p>95% of content verified with academic citations. Comprehensive excavation histories and bibliographies for serious research.</p>
+                        <h3>Amaçlarımız</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Arkeolojik alanlar hakkında kapsamlı bilgi sağlamak</li>
+                            <li><i class="fas fa-check-circle"></i> Kültürel mirasımızı koruma bilincini artırmak</li>
+                            <li><i class="fas fa-check-circle"></i> Eğitim ve araştırma için erişilebilir kaynak oluşturmak</li>
+                            <li><i class="fas fa-check-circle"></i> Kültür turizmini desteklemek</li>
+                        </ul>
                     </div>
-
-                    <div class="intro-card">
-                        <div class="intro-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h3>International Access</h3>
-                        <p>English language platform maximizing global accessibility to Turkey's archaeological heritage.</p>
-                    </div>
-
-                    <div class="intro-card">
-                        <div class="intro-icon">
-                            <i class="fas fa-balance-scale"></i>
-                        </div>
-                        <h3>Dual-Audience Design</h3>
-                        <p>Layered information architecture serving both casual tourists and academic researchers.</p>
-                    </div>
-
-                    <div class="intro-card">
-                        <div class="intro-icon">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <h3>Lesser-Known Sites</h3>
-                        <p>22 lesser-known sites documented with equal rigor to famous destinations like Ephesus.</p>
+                    <div class="about-image" data-aos="fade-left">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Efez_Library_Celsusa.jpg/800px-Efez_Library_Celsusa.jpg" alt="Efes Celsus Kütüphanesi">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Research Questions -->
-    <section style="padding: var(--spacing-10) 0; background: var(--color-gray-50);">
-        <div class="container">
-            <div style="max-width: 900px; margin: 0 auto;">
-                <h2 style="font-size: var(--text-4xl); margin-bottom: var(--spacing-6); text-align: center;">Research Questions</h2>
-
-                <div style="display: grid; gap: var(--spacing-6);">
-                    <div style="background: white; padding: var(--spacing-6); border-radius: var(--radius-xl); box-shadow: var(--shadow-base); border-left: 4px solid var(--color-primary);">
-                        <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-3);">RQ1: Information Structuring</h3>
-                        <p style="line-height: 1.8; color: var(--color-gray-700);">
-                            How can scattered archaeological information be systematically structured and presented through a web-based platform to serve both academic and general audiences effectively?
-                        </p>
-                    </div>
-
-                    <div style="background: white; padding: var(--spacing-6); border-radius: var(--radius-xl); box-shadow: var(--shadow-base); border-left: 4px solid var(--color-secondary);">
-                        <h3 style="color: var(--color-secondary); margin-bottom: var(--spacing-3);">RQ2: Design Principles</h3>
-                        <p style="line-height: 1.8; color: var(--color-gray-700);">
-                            What design principles and technical approaches best support a dual-content strategy that maintains academic rigor while ensuring accessibility for cultural tourists?
-                        </p>
-                    </div>
-
-                    <div style="background: white; padding: var(--spacing-6); border-radius: var(--radius-xl); box-shadow: var(--shadow-base); border-left: 4px solid var(--color-primary);">
-                        <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-3);">RQ3: Digital Visibility</h3>
-                        <p style="line-height: 1.8; color: var(--color-gray-700);">
-                            How can digital platforms contribute to increasing visibility and appreciation for lesser-known archaeological sites?
-                        </p>
-                    </div>
+        <!-- Features -->
+        <section class="features-section section bg-light">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Platform Özellikleri</h2>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Methodology -->
-    <section style="padding: var(--spacing-10) 0; background: white;">
-        <div class="container">
-            <div style="max-width: 900px; margin: 0 auto;">
-                <h2 style="font-size: var(--text-4xl); margin-bottom: var(--spacing-6); text-align: center;">Methodology</h2>
-
-                <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--color-gray-700); margin-bottom: var(--spacing-6); text-align: center;">
-                    This project employs Design Science Research (DSR) methodology with Agile development principles, organized into 14-week sprint cycles.
-                </p>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-5); margin-top: var(--spacing-8);">
-                    <div style="text-align: center;">
-                        <div style="width: 80px; height: 80px; margin: 0 auto var(--spacing-4); background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--text-3xl);">
+                <div class="features-grid">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+                        <div class="feature-icon">
                             <i class="fas fa-database"></i>
                         </div>
-                        <h4 style="margin-bottom: var(--spacing-2);">Data Collection</h4>
-                        <p style="color: var(--color-gray-600); font-size: var(--text-sm);">40 sites documented from official Ministry publications and academic sources</p>
+                        <h3>Kapsamlı Veri</h3>
+                        <p>12 arkeolojik alan için detaylı bilgi, fotoğraflar ve tarihi veriler</p>
                     </div>
-
-                    <div style="text-align: center;">
-                        <div style="width: 80px; height: 80px; margin: 0 auto var(--spacing-4); background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--text-3xl);">
-                            <i class="fas fa-check-double"></i>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon">
+                            <i class="fas fa-filter"></i>
                         </div>
-                        <h4 style="margin-bottom: var(--spacing-2);">Verification</h4>
-                        <p style="color: var(--color-gray-600); font-size: var(--text-sm);">Two-source verification protocol with 127 academic references</p>
+                        <h3>Akıllı Filtreleme</h3>
+                        <p>Kategori, dönem ve bölgeye göre alanları kolayca filtreleyebilme</p>
                     </div>
-
-                    <div style="text-align: center;">
-                        <div style="width: 80px; height: 80px; margin: 0 auto var(--spacing-4); background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--text-3xl);">
-                            <i class="fas fa-code"></i>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
                         </div>
-                        <h4 style="margin-bottom: var(--spacing-2);">Development</h4>
-                        <p style="color: var(--color-gray-600); font-size: var(--text-sm);">Modern web technologies with responsive, accessible design</p>
+                        <h3>Responsive Tasarım</h3>
+                        <p>Tüm cihazlarda mükemmel görüntüleme deneyimi</p>
                     </div>
-
-                    <div style="text-align: center;">
-                        <div style="width: 80px; height: 80px; margin: 0 auto var(--spacing-4); background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--text-3xl);">
-                            <i class="fas fa-vial"></i>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-icon">
+                            <i class="fas fa-universal-access"></i>
                         </div>
-                        <h4 style="margin-bottom: var(--spacing-2);">Testing</h4>
-                        <p style="color: var(--color-gray-600); font-size: var(--text-sm);">User acceptance testing with academic and tourist users</p>
+                        <h3>Erişilebilirlik</h3>
+                        <p>WCAG 2.1 standartlarına uygun, herkes için erişilebilir</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Project Team -->
-    <section style="padding: var(--spacing-10) 0; background: var(--color-gray-50);">
-        <div class="container">
-            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-                <h2 style="font-size: var(--text-4xl); margin-bottom: var(--spacing-6);">Project Information</h2>
+        <!-- Statistics -->
+        <section class="stats-section section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card" data-aos="zoom-in" data-aos-delay="0">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Arkeolojik Alan</div>
+                    </div>
+                    <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">UNESCO Mirası</div>
+                    </div>
+                    <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="stat-number">5000+</div>
+                        <div class="stat-label">Yıllık Tarih</div>
+                    </div>
+                    <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="stat-number">9</div>
+                        <div class="stat-label">İlçe</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <div style="background: white; padding: var(--spacing-8); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);">
-                    <div style="margin-bottom: var(--spacing-6);">
-                        <div style="width: 100px; height: 100px; margin: 0 auto var(--spacing-4); background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--text-4xl);">
-                            <i class="fas fa-user-graduate"></i>
+        <!-- Developer -->
+        <section class="developer-section section bg-light">
+            <div class="container">
+                <div class="developer-card" data-aos="fade-up">
+                    <h2>Geliştirici</h2>
+                    <p class="developer-name">Berkay Gülbeyaz</p>
+                    <p>Bu proje, İzmir'in zengin kültürel mirasını dijital ortamda erişilebilir kılmak ve gelecek nesillere aktarmak amacıyla geliştirilmiştir.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section class="resources-section section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Kaynaklar ve Referanslar</h2>
+                </div>
+                <div class="resources-list" data-aos="fade-up">
+                    <div class="resource-item">
+                        <i class="fas fa-external-link-alt"></i>
+                        <div>
+                            <h4>Kültür ve Turizm Bakanlığı</h4>
+                            <p>Resmi arkeolojik alan bilgileri ve kazı raporları</p>
+                            <a href="https://kvmgm.ktb.gov.tr/" target="_blank" rel="noopener">kvmgm.ktb.gov.tr</a>
                         </div>
-                        <h3 style="font-size: var(--text-2xl); margin-bottom: var(--spacing-2);">Berkay Gülbeyaz</h3>
-                        <p style="color: var(--color-gray-600);">Student ID: 191005056</p>
                     </div>
-
-                    <div style="border-top: 1px solid var(--color-gray-200); padding-top: var(--spacing-6); text-align: left;">
-                        <div style="display: grid; gap: var(--spacing-4);">
-                            <div style="display: flex; justify-content: space-between; padding: var(--spacing-3); background: var(--color-gray-50); border-radius: var(--radius-base);">
-                                <span style="font-weight: 600; color: var(--color-gray-700);">Department:</span>
-                                <span style="color: var(--color-gray-900);">Management Information Systems</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; padding: var(--spacing-3); background: var(--color-gray-50); border-radius: var(--radius-base);">
-                                <span style="font-weight: 600; color: var(--color-gray-700);">Institution:</span>
-                                <span style="color: var(--color-gray-900);">İzmir Bakırçay University</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; padding: var(--spacing-3); background: var(--color-gray-50); border-radius: var(--radius-base);">
-                                <span style="font-weight: 600; color: var(--color-gray-700);">Contact Person:</span>
-                                <span style="color: var(--color-gray-900);">Fares DAEL</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; padding: var(--spacing-3); background: var(--color-gray-50); border-radius: var(--radius-base);">
-                                <span style="font-weight: 600; color: var(--color-gray-700);">Email:</span>
-                                <span style="color: var(--color-primary);">fares.dael@bakircay.edu.tr</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; padding: var(--spacing-3); background: var(--color-gray-50); border-radius: var(--radius-base);">
-                                <span style="font-weight: 600; color: var(--color-gray-700);">Expected Graduation:</span>
-                                <span style="color: var(--color-gray-900);">January 2026</span>
-                            </div>
+                    <div class="resource-item">
+                        <i class="fas fa-external-link-alt"></i>
+                        <div>
+                            <h4>UNESCO Dünya Mirası</h4>
+                            <p>Dünya mirası listesindeki alanlar hakkında bilgiler</p>
+                            <a href="https://whc.unesco.org/" target="_blank" rel="noopener">whc.unesco.org</a>
+                        </div>
+                    </div>
+                    <div class="resource-item">
+                        <i class="fas fa-external-link-alt"></i>
+                        <div>
+                            <h4>Wikimedia Commons</h4>
+                            <p>Arkeolojik alan fotoğrafları</p>
+                            <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">commons.wikimedia.org</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Impact & Future -->
-    <section style="padding: var(--spacing-10) 0; background: white;">
-        <div class="container">
-            <div style="max-width: 900px; margin: 0 auto;">
-                <h2 style="font-size: var(--text-4xl); margin-bottom: var(--spacing-6); text-align: center;">Expected Impact</h2>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-6);">
-                    <div style="padding: var(--spacing-6); background: var(--color-gray-50); border-radius: var(--radius-xl);">
-                        <i class="fas fa-university" style="font-size: var(--text-3xl); color: var(--color-primary); margin-bottom: var(--spacing-3);"></i>
-                        <h4 style="margin-bottom: var(--spacing-3);">Academic Contribution</h4>
-                        <p style="color: var(--color-gray-700); line-height: 1.7;">
-                            Centralized reference point for researchers conducting comparative studies of Ionian archaeological sites.
-                        </p>
-                    </div>
-
-                    <div style="padding: var(--spacing-6); background: var(--color-gray-50); border-radius: var(--radius-xl);">
-                        <i class="fas fa-plane-departure" style="font-size: var(--text-3xl); color: var(--color-primary); margin-bottom: var(--spacing-3);"></i>
-                        <h4 style="margin-bottom: var(--spacing-3);">Tourism Development</h4>
-                        <p style="color: var(--color-gray-700); line-height: 1.7;">
-                            Enhanced visibility for lesser-known sites, potentially redistributing tourist flows and generating economic benefits.
-                        </p>
-                    </div>
-
-                    <div style="padding: var(--spacing-6); background: var(--color-gray-50); border-radius: var(--radius-xl);">
-                        <i class="fas fa-heart" style="font-size: var(--text-3xl); color: var(--color-primary); margin-bottom: var(--spacing-3);"></i>
-                        <h4 style="margin-bottom: var(--spacing-3);">Cultural Preservation</h4>
-                        <p style="color: var(--color-gray-700); line-height: 1.7;">
-                            Increased awareness contributing to preservation efforts and potentially attracting resources for maintenance.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Explore Archaeological Heritage</h2>
-                <p>Discover 40 meticulously documented sites across Izmir Province</p>
-                <div class="cta-buttons">
-                    <a href="sites.html" class="btn btn-primary btn-large">
-                        <i class="fas fa-compass"></i> Browse All Sites
-                    </a>
-                    <a href="index.html" class="btn btn-secondary btn-large">
-                        <i class="fas fa-home"></i> Return Home
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Archaeological Izmir</h4>
-                    <p>A comprehensive digital platform for archaeological sites in Izmir Province, Turkey.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Arkeo İzmir</h3>
+                    <p>İzmir'in zengin arkeolojik mirasını keşfetmek için dijital platformunuz</p>
                 </div>
-
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="sites.html">All Sites</a></li>
-                        <li><a href="about.html">About</a></li>
+                <div class="footer-section">
+                    <h4>Hızlı Bağlantılar</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="sites.html">Tüm Alanlar</a></li>
+                        <li><a href="about.html">Hakkında</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Visitor Information</a></li>
-                        <li><a href="#">Academic References</a></li>
-                        <li><a href="#">Bibliography</a></li>
+                <div class="footer-section">
+                    <h4>Kaynaklar</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://kvmgm.ktb.gov.tr/" target="_blank" rel="noopener">Kültür ve Turizm Bakanlığı</a></li>
+                        <li><a href="https://whc.unesco.org/" target="_blank" rel="noopener">UNESCO Dünya Mirası</a></li>
                     </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Project Info</h4>
-                    <p><strong>Student:</strong> Berkay Gülbeyaz (191005056)</p>
-                    <p><strong>Department:</strong> Management Information Systems</p>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; 2025 Archaeological Heritage of Izmir. Graduation Thesis Project.</p>
-                <p>Data sources: Republic of Turkey Ministry of Culture and Tourism, Academic Publications</p>
+                <p>&copy; 2024 Arkeo İzmir. Tüm hakları saklıdır.</p>
+                <p>Geliştirici: <strong>Berkay Gülbeyaz</strong></p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="js/sites-data.js"></script>
-    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>
+
