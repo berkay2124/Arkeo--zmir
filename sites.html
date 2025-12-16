@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore all 40 archaeological sites in Izmir Province with detailed information and filtering options.">
-    <title>All Archaeological Sites | Izmir Heritage</title>
+    <meta name="description" content="İzmir İli'ndeki tüm 12 arkeolojik alanı keşfedin. Detaylı bilgiler ve filtreleme seçenekleri.">
+    <title>Tüm Arkeolojik Alanlar | Arkeo İzmir</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏛️%3C/text%3E%3C/svg%3E">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,395 +21,144 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        .page-header {
-            padding: 120px 0 60px;
-            background: linear-gradient(135deg, var(--color-secondary-dark), var(--color-secondary));
-            color: white;
-            text-align: center;
-        }
-
-        .page-header h1 {
-            color: white;
-            font-size: var(--text-5xl);
-            margin-bottom: var(--spacing-4);
-        }
-
-        .filter-section {
-            padding: var(--spacing-8) 0;
-            background: var(--color-gray-50);
-            border-bottom: 1px solid var(--color-gray-200);
-        }
-
-        .filter-controls {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-4);
-            margin-bottom: var(--spacing-6);
-        }
-
-        .filter-group {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-2);
-        }
-
-        .filter-group label {
-            font-weight: 600;
-            color: var(--color-gray-700);
-            font-size: var(--text-sm);
-        }
-
-        .filter-select {
-            padding: var(--spacing-3) var(--spacing-4);
-            border: 2px solid var(--color-gray-300);
-            border-radius: var(--radius-lg);
-            font-family: var(--font-primary);
-            font-size: var(--text-base);
-            background: white;
-            cursor: pointer;
-            transition: all var(--transition-base);
-        }
-
-        .filter-select:focus {
-            outline: none;
-            border-color: var(--color-primary);
-        }
-
-        .results-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: var(--spacing-4);
-            background: white;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .results-count {
-            font-weight: 600;
-            color: var(--color-gray-700);
-        }
-
-        .view-toggle {
-            display: flex;
-            gap: var(--spacing-2);
-        }
-
-        .view-btn {
-            padding: var(--spacing-2) var(--spacing-4);
-            background: var(--color-gray-200);
-            border-radius: var(--radius-base);
-            transition: all var(--transition-base);
-        }
-
-        .view-btn.active {
-            background: var(--color-primary);
-            color: white;
-        }
-
-        .sites-list-section {
-            padding: var(--spacing-8) 0;
-        }
-
-        .list-view .sites-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .list-view .site-card {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: var(--spacing-5);
-        }
-
-        .list-view .site-card-image {
-            height: auto;
-            min-height: 200px;
-        }
-
-        .sort-options {
-            display: flex;
-            gap: var(--spacing-3);
-            align-items: center;
-        }
-
-        @media (max-width: 768px) {
-            .list-view .site-card {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <a href="index.html" class="logo">
-                    <i class="fas fa-landmark"></i>
-                    <span class="logo-text">Archaeological <span class="highlight">Izmir</span></span>
-                </a>
+    <!-- Skip to content link -->
+    <a href="#main-content" class="skip-link">Ana içeriğe atla</a>
 
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="sites.html" class="nav-link active">Explore Sites</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="#" class="nav-link" id="searchToggle"><i class="fas fa-search"></i></a></li>
-                </ul>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="nav container" role="navigation" aria-label="Ana navigasyon">
+            <div class="nav-brand">
+                <span class="nav-icon">🏛️</span>
+                <span class="nav-title">Arkeo İzmir</span>
             </div>
-        </div>
-    </nav>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+                <li><a href="sites.html" class="nav-link active" aria-current="page">Tüm Alanlar</a></li>
+                <li><a href="about.html" class="nav-link">Hakkında</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Search Overlay -->
-    <div class="search-overlay" id="searchOverlay">
-        <div class="search-container">
-            <button class="search-close" id="searchClose">&times;</button>
-            <input type="text" id="searchInput" class="search-input" placeholder="Search archaeological sites...">
-            <div class="search-results" id="searchResults"></div>
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Arkeolojik Alanlar</h1>
+            <p>İzmir'deki 12 muhteşem arkeolojik alanı keşfedin</p>
         </div>
     </div>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Explore Archaeological Sites</h1>
-            <p style="font-size: var(--text-lg); max-width: 700px; margin: 0 auto; opacity: 0.95;">
-                Discover all 40 documented archaeological sites across Izmir Province
-            </p>
-        </div>
-    </section>
-
-    <!-- Filter Section -->
-    <section class="filter-section">
-        <div class="container">
-            <div class="filter-controls">
-                <div class="filter-group">
-                    <label for="categoryFilter">Category</label>
-                    <select id="categoryFilter" class="filter-select">
-                        <option value="all">All Categories</option>
-                        <option value="unesco">UNESCO World Heritage</option>
-                        <option value="major">Major Sites</option>
-                        <option value="lesser">Lesser-Known Gems</option>
-                        <option value="restricted">Restricted Access</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label for="periodFilter">Historical Period</label>
-                    <select id="periodFilter" class="filter-select">
-                        <option value="all">All Periods</option>
-                        <option value="Bronze Age">Bronze Age</option>
-                        <option value="Archaic">Archaic (1200-480 BCE)</option>
-                        <option value="Classical">Classical (480-323 BCE)</option>
-                        <option value="Hellenistic">Hellenistic (323-30 BCE)</option>
-                        <option value="Roman">Roman (30 BCE-330 CE)</option>
-                        <option value="Byzantine">Byzantine (330-1453 CE)</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label for="districtFilter">District</label>
-                    <select id="districtFilter" class="filter-select">
-                        <option value="all">All Districts</option>
-                        <option value="Selçuk">Selçuk</option>
-                        <option value="Bergama">Bergama</option>
-                        <option value="Konak">Konak (İzmir Center)</option>
-                        <option value="Torbalı">Torbalı</option>
-                        <option value="Seferihisar">Seferihisar</option>
-                        <option value="Menderes">Menderes</option>
-                        <option value="Çeşme">Çeşme</option>
-                        <option value="Urla">Urla</option>
-                        <option value="Germencik">Germencik</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label for="sortBy">Sort By</label>
-                    <select id="sortBy" class="filter-select">
-                        <option value="name">Name (A-Z)</option>
-                        <option value="popularity">Popularity</option>
-                        <option value="period">Historical Period</option>
-                        <option value="visitors">Annual Visitors</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="results-info">
-                <div class="results-count" id="resultsCount">
-                    Showing <strong id="siteCount">0</strong> sites
-                </div>
-                <div class="view-toggle">
-                    <button class="view-btn active" id="gridViewBtn" onclick="setView('grid')">
-                        <i class="fas fa-th"></i> Grid
-                    </button>
-                    <button class="view-btn" id="listViewBtn" onclick="setView('list')">
-                        <i class="fas fa-list"></i> List
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sites List Section -->
-    <section class="sites-list-section">
-        <div class="container">
-            <div class="sites-grid" id="allSitesGrid">
-                <!-- Sites will be loaded dynamically -->
-            </div>
-
-            <div id="noResults" style="display: none; text-align: center; padding: var(--spacing-10);">
-                <i class="fas fa-search" style="font-size: 4rem; color: var(--color-gray-300); margin-bottom: var(--spacing-4);"></i>
-                <h3>No sites found</h3>
-                <p style="color: var(--color-gray-600);">Try adjusting your filters</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Archaeological Izmir</h4>
-                    <p>A comprehensive digital platform for archaeological sites in Izmir Province, Turkey.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Filters Section -->
+        <section class="filter-section" role="region" aria-label="Filtreleme seçenekleri">
+            <div class="container">
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label for="category-filter">Kategori</label>
+                        <select id="category-filter" class="filter-select" aria-label="Kategori filtresi">
+                            <option value="all">Tümü</option>
+                            <option value="unesco">UNESCO Mirası</option>
+                            <option value="major">Büyük Alanlar</option>
+                            <option value="lesser">Gizli Hazineler</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="period-filter">Dönem</label>
+                        <select id="period-filter" class="filter-select" aria-label="Dönem filtresi">
+                            <option value="all">Tümü</option>
+                            <option value="Archaic">Arkaik</option>
+                            <option value="Classical">Klasik</option>
+                            <option value="Hellenistic">Helenistik</option>
+                            <option value="Roman">Roma</option>
+                            <option value="Byzantine">Bizans</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="district-filter">İlçe</label>
+                        <select id="district-filter" class="filter-select" aria-label="İlçe filtresi">
+                            <option value="all">Tümü</option>
+                            <option value="Selçuk">Selçuk</option>
+                            <option value="Bergama">Bergama</option>
+                            <option value="Konak">Konak</option>
+                            <option value="Torbalı">Torbalı</option>
+                            <option value="Seferihisar">Seferihisar</option>
+                            <option value="Menderes">Menderes</option>
+                            <option value="Çeşme">Çeşme</option>
+                            <option value="Urla">Urla</option>
+                            <option value="Germencik">Germencik</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="search-input">Ara</label>
+                        <input
+                            type="text"
+                            id="search-input"
+                            class="filter-select"
+                            placeholder="Alan adı ara..."
+                            aria-label="Arama"
+                        >
                     </div>
                 </div>
-
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="sites.html">All Sites</a></li>
-                        <li><a href="about.html">About</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Visitor Information</a></li>
-                        <li><a href="#">Academic References</a></li>
-                        <li><a href="#">Bibliography</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Project Info</h4>
-                    <p><strong>Student:</strong> Berkay Gülbeyaz (191005056)</p>
-                    <p><strong>Department:</strong> Management Information Systems</p>
+                <div class="filter-results">
+                    <span id="results-count">12 alan bulundu</span>
+                    <button id="clear-filters" class="btn btn-secondary btn-sm">Filtreleri Temizle</button>
                 </div>
             </div>
+        </section>
 
+        <!-- Sites Grid -->
+        <section class="sites-section section">
+            <div class="container">
+                <div class="sites-grid" id="all-sites">
+                    <!-- Sites will be dynamically loaded here -->
+                </div>
+                <div id="no-results" class="no-results" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>Sonuç Bulunamadı</h3>
+                    <p>Arama kriterlerinize uygun alan bulunamadı. Lütfen filtrelerinizi değiştirin.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Arkeo İzmir</h3>
+                    <p>İzmir'in zengin arkeolojik mirasını keşfetmek için dijital platformunuz</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hızlı Bağlantılar</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="sites.html">Tüm Alanlar</a></li>
+                        <li><a href="about.html">Hakkında</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kaynaklar</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://kvmgm.ktb.gov.tr/" target="_blank" rel="noopener">Kültür ve Turizm Bakanlığı</a></li>
+                        <li><a href="https://whc.unesco.org/" target="_blank" rel="noopener">UNESCO Dünya Mirası</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Archaeological Heritage of Izmir. Graduation Thesis Project.</p>
+                <p>&copy; 2024 Arkeo İzmir. Tüm hakları saklıdır.</p>
+                <p>Geliştirici: <strong>Berkay Gülbeyaz</strong></p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/sites-data.js"></script>
-    <script src="js/main.js"></script>
-
-    <script>
-        // Sites page specific functionality
-        let currentView = 'grid';
-        let filteredSites = [...archaeologicalSites];
-
-        document.addEventListener('DOMContentLoaded', function() {
-            loadAllSites();
-            initializeFilters();
-        });
-
-        function loadAllSites() {
-            displayFilteredSites(archaeologicalSites);
-        }
-
-        function initializeFilters() {
-            document.getElementById('categoryFilter').addEventListener('change', applyFilters);
-            document.getElementById('periodFilter').addEventListener('change', applyFilters);
-            document.getElementById('districtFilter').addEventListener('change', applyFilters);
-            document.getElementById('sortBy').addEventListener('change', applyFilters);
-        }
-
-        function applyFilters() {
-            const category = document.getElementById('categoryFilter').value;
-            const period = document.getElementById('periodFilter').value;
-            const district = document.getElementById('districtFilter').value;
-            const sortBy = document.getElementById('sortBy').value;
-
-            filteredSites = archaeologicalSites.filter(site => {
-                const categoryMatch = category === 'all' || site.category === category;
-                const periodMatch = period === 'all' || site.periods.includes(period) || site.mainPeriod === period;
-                const districtMatch = district === 'all' || site.district === district;
-
-                return categoryMatch && periodMatch && districtMatch;
-            });
-
-            // Sort
-            filteredSites.sort((a, b) => {
-                switch(sortBy) {
-                    case 'name':
-                        return a.name.localeCompare(b.name);
-                    case 'popularity':
-                        const popOrder = { high: 3, medium: 2, low: 1 };
-                        return (popOrder[b.popularity] || 0) - (popOrder[a.popularity] || 0);
-                    case 'visitors':
-                        return (b.annualVisitors || 0) - (a.annualVisitors || 0);
-                    case 'period':
-                        return a.mainPeriod.localeCompare(b.mainPeriod);
-                    default:
-                        return 0;
-                }
-            });
-
-            displayFilteredSites(filteredSites);
-        }
-
-        function displayFilteredSites(sites) {
-            const container = document.getElementById('allSitesGrid');
-            const noResults = document.getElementById('noResults');
-            const siteCount = document.getElementById('siteCount');
-
-            siteCount.textContent = sites.length;
-
-            if (sites.length === 0) {
-                container.innerHTML = '';
-                noResults.style.display = 'block';
-                return;
-            }
-
-            noResults.style.display = 'none';
-            const html = sites.map(site => createSiteCard(site)).join('');
-            container.innerHTML = html;
-        }
-
-        function setView(view) {
-            currentView = view;
-            const container = document.getElementById('allSitesGrid').parentElement;
-            const gridBtn = document.getElementById('gridViewBtn');
-            const listBtn = document.getElementById('listViewBtn');
-
-            if (view === 'grid') {
-                container.classList.remove('list-view');
-                gridBtn.classList.add('active');
-                listBtn.classList.remove('active');
-            } else {
-                container.classList.add('list-view');
-                listBtn.classList.add('active');
-                gridBtn.classList.remove('active');
-            }
-        }
-    </script>
+    <script src="js/sites.js"></script>
 </body>
 </html>
